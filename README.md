@@ -1,4 +1,4 @@
-b# react-homework
+# react-homework
 
 ### # 2 디자인 -> 개발 핸드오프 과제
 
