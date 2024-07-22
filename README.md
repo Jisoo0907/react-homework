@@ -2,7 +2,7 @@ b# react-homework
 
 ### # 2 디자인 -> 개발 핸드오프 과제
 
-[html 파일 바로가기](/src/index.html)
+[html 파일 바로가기](/src/index.html) </br>
 [css 파일 바로가기](/src/style/style.css)
 
 </br>
