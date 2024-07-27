@@ -1,6 +1,6 @@
 # react-homework
 
-### # 2 디자인 -> 개발 핸드오프 과제
+### 2 디자인 -> 개발 핸드오프 과제
 
 [html 파일 바로가기](/02-design-handoff/src/index.html)
 [css 파일 바로가기](/02-design-handoff/src/style/style.css)
