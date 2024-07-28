@@ -1,11 +1,12 @@
 .Button {
-  width: 278px;
-  height: 36px;
-  border-radius: 8px;
-  padding: 8px 126px;
-  font-size: 14px;
+  border-radius: 0.5rem;
+  padding: 0.5rem 7.875rem;
+  font-size: 0.875rem;
   cursor: pointer;
+  min-width: 20rem;
   color: #fff;
+  border: 0;
+  background-color: transparent;
 }
 
 .Button-active {
