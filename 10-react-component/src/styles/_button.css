@@ -1,0 +1,17 @@
+.Button {
+  width: 278px;
+  height: 36px;
+  border-radius: 8px;
+  padding: 8px 126px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.Button-active {
+  background: var(--button-active);
+}
+
+.Button-inactive {
+  background: var(--button-inactive);
+}
