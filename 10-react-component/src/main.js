@@ -8,7 +8,11 @@ function Button({ children, status = "inactive" }) {
   const label = `${statusMessage}`;
 
   return (
-    <button className="Button Button-${status}" aria-label={label}>
+    <button
+      className={`Button Button-${status}`}
+      aria-label={label}
+      type="button"
+    >
       {children}
     </button>
   );
