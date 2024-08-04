@@ -1,0 +1,18 @@
+.Button {
+  border-radius: 0.5rem;
+  padding: 0.5rem 7.875rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  min-width: 20rem;
+  color: #fff;
+  border: 0;
+  background-color: transparent;
+}
+
+.Button-active {
+  background: var(--button-active);
+}
+
+.Button-inactive {
+  background: var(--button-inactive);
+}

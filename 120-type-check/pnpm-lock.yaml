@@ -48,6 +48,9 @@ importers:
       prettier:
         specifier: 3.3.3
         version: 3.3.3
+      prop-types:
+        specifier: 15.8.1
+        version: 15.8.1
       vite:
         specifier: ^5.3.5
         version: 5.3.5(@types/node@22.0.0)
