@@ -21,8 +21,6 @@ Button.propTypes = {
   disabled: PropTypes.bool,
 };
 
-const container = document.getElementById('react-app');
-
 function ButtonListPage() {
   const buttonText = '동의하고 시작하기';
   return (
