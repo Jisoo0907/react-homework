@@ -44,3 +44,30 @@ const handlePlay = (index) => {
     console.log(`play game #${index}`);
   };
 ```
+
+#### STEP5
+
+- 게임 상태 업데이트
+- 화면(UI) 변경
+- 어려웠던 부분
+
+```
+  const playGame = (index) => {
+    setSquares((prevSquares) => {
+      const nextSquares = prevSquares.map((square, squareIndex) => {
+        if (squareIndex === index) {
+          return currentPlayer;
+        }
+        return square;
+      });
+    });
+  };
+```
+
+- 왜 playGame에서는 현재 상태가 아니라 prevSquare를 기반으로 클릭된 칸을 찾는 지 이해하는 데 오래걸렸다.
+- useState에 관한 공식 문서 설명
+
+```
+- useState가 반환하는 set 함수를 사용하면 state를 다른 값으로 업데이트하고 리렌더링을 촉발할 수 있습니다. 여기에는 다음 state를 직접 전달하거나, 이전 state로부터 계산한 함수를 전달할 수도 있습니다.
+- set 함수는 다음 렌더링에 대한 state 변수만 업데이트합니다. set 함수를 호출한 후에도 state 변수에는 여전히 호출 전 화면에 있던 이전 값이 담겨 있습니다.
+```
