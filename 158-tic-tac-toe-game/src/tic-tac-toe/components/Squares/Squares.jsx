@@ -12,12 +12,16 @@ import Square from '../Square/Square';
 /* stateful component */
 function Squares() {
   /* 게임 상태 */
-
   const [squares, setSquares] = useState(INITIAL_SQUARES);
 
   /* 게임 상태 업데이트 기능 */
   // 게임을 진행하는 함수 (사용자가 특정 칸 클릭 시 실행)
   const handlePlayGame = (index) => () => {
+    if (winnerInfo) {
+      alert('GAME OVER');
+      return; // 함수 종료
+    }
+
     setSquares((prevSquares) => {
       const nextSquares = prevSquares.map((square, idx) => {
         return idx === index ? currentPlayer : square;

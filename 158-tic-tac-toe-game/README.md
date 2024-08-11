@@ -117,3 +117,15 @@ export const checkWinner = (squares) => {
 
 - 게임 승리 시 스타일링
   ![image](https://github.com/user-attachments/assets/253e74f0-2f56-436b-af66-e0f1fa38e611)
+
+##### STEP8
+
+- 게임 종료 시 게임 오버 메시지 출력
+- 게임을 실행하는 함수 종료
+
+```
+  if (winnerInfo) {
+      alert('GAME OVER');
+      return; // 함수 종료
+    }
+```
