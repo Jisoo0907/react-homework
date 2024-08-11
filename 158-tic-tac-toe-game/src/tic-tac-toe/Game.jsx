@@ -14,8 +14,6 @@ function Game() {
   // [게임 상태] --------------------------------------------------------------
 
   const [gameHistory, setGameHistory] = useState([INITIAL_SQUARES]);
-  // 왜 배열로 초기 상태를 설정하나?
-  // gameHistory가 게임의 진행 상태를 기록하는 역할이기 때문
 
   // 게임 진행 순서
   const [gameIndex, setGameIndex] = useState(0);
@@ -26,46 +24,47 @@ function Game() {
   const handlePlayGame = (index) => () => {
     if (winnerInfo) {
       alert('GAME OVER');
-
       return;
     }
 
-    // 다음 게임의 인덱스는? -----------------------------------------------
     const nextGameIndex = gameIndex + 1;
+
     // 다음 게임 인덱스 상태 업데이트 요청
     setGameIndex(nextGameIndex);
-
-    // 게임 히스토리에 기록을 추가
     const nextSquares = currentSquares.map((square, idx) => {
-      // currentSquares: 현재 보드의 상태
-      // idx: 현재 요소의 인덱스
-      // index: 함수 외부에서 전달된 값
       return idx === index ? nextPlayer : square;
-      // 현재 요소의 인덱스(idx)가 사용자가 선택한 index와 같은지 확인
-      // 같으면 nextPlayer 반환
-      // 아니면 기존 값 유지
     });
 
-    // [ [null, ..., null] ]
-    // [ [null, ..., null], ['one', ..., null] ]
-    const nextGameHistory = [...gameHistory, nextSquares];
-    // nextSquares: 현재 턴에서 업데이트된 보드의 상태
-    // 사용자가 이번 턴에 플레이한 결과
-    // 새로운 게임 상태를 gameHistory에 추가, 그 결과를 업데이트된 상태로 설정
+    // 게임의 히스토리(기억) 또한 되돌려야 함
+    // 선택된 게임의 인덱스 정보를 사용해 게임 히스토리를 잘라야 한다.
+    const nextGameHistory = [
+      ...gameHistory.slice(0, nextGameIndex), // 기존의 gaemHistory배열에서
+      // 현재 인덱스(nextGameIndex)까지의 기록 잘라내어 가져옴
+      nextSquares, // 현재 턴 이후의 기록을 새로운 기록으로 대체함
+    ];
 
-    setGameHistory(nextGameHistory);
+    setGameHistory(nextGameHistory); // 업데이트된 게임 기록을 상태로 설정하여
+    // 리액트가 다시 렌더링되도록
 
     // ---------------------------------------------------------------
   };
 
+  // 시간 여행 기능(함수)
+  const handleTimeTravel = (index) => {
+    // 되돌리고 싶은 시간의 기억으로 게임 인덱스를 업데이트 요청
+    setGameIndex(index);
+  };
+
   // [게임 파생된 상태] ----------------------------------------------------------
 
-  // 게임 히스토리에서 현재 게임판은? 현재 게임 상태 가져오는 것
+  // 게임 히스토리에서 현재 게임판은?
   const currentSquares = gameHistory[gameIndex];
+
   const winnerInfo = checkWinner(currentSquares);
   const isPlayerOneTurn =
     currentSquares.filter(Boolean).length % PLAYER_COUNT === 0; // true
   const nextPlayer = isPlayerOneTurn ? PLAYER.ONE : PLAYER.TWO;
+
   const isDraw = !winnerInfo && currentSquares.every(Boolean);
 
   return (
@@ -77,7 +76,11 @@ function Game() {
         onPlay={handlePlayGame}
         isDraw={isDraw}
       />
-      <History gameHistory={gameHistory} />
+      <History
+        onTimeTravel={handleTimeTravel}
+        gameHistory={gameHistory}
+        gameIndex={gameIndex}
+      />
     </div>
   );
 }
