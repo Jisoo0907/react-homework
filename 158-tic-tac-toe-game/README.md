@@ -1,20 +1,19 @@
 # #158 틱택토 게임 한 번 더!
 
 > 진행된 STEP 순서로 정리
-> 각 STEP 별로 어려웠던 점/부분 기록
 
-##### STEP1
+#### STEP1
 
 - 작업 환경 구성
 
-##### STEP2
+#### STEP2
 
 - 게임 상수 정의
 - 컴포넌트 추출, 컴포넌트 트리 구성
-- 현재 컴포넌트 구성
+- 현재 컴포넌트 구성 <br/>
   ![image](https://github.com/user-attachments/assets/e7bd2c80-be44-431e-b94f-1780b5d299ad)
 
-##### STEP3
+#### STEP3
 
 - props에 따른 렌더링 설계
   - 플레이어가 선택한 칸은 버튼이 비활성화 상태로 설정
@@ -23,7 +22,7 @@
 - CSS 모듈 스타일링
   - 스타일 클래스 이름이 고유하게 관리되어 다른 컴포넌트 스타일과 충돌하지 않음
 
-##### STEP4
+#### STEP4
 
 - 게임 상태
 
@@ -45,7 +44,7 @@ const handlePlay = (index) => {
   };
 ```
 
-##### STEP5
+#### STEP5
 
 - 게임 상태 업데이트
 - 화면(UI) 변경
@@ -72,11 +71,11 @@ const handlePlay = (index) => {
 - set 함수는 다음 렌더링에 대한 state 변수만 업데이트합니다. set 함수를 호출한 후에도 state 변수에는 여전히 호출 전 화면에 있던 이전 값이 담겨 있습니다.
 ```
 
-##### STEP6
+#### STEP6
 
 - CSS 모듈을 활용한 스타일링
 
-##### STEP7
+#### STEP7
 
 - 게임 승리 조건 상수로 선언
 
@@ -115,10 +114,10 @@ export const checkWinner = (squares) => {
 };
 ```
 
-- 게임 승리 시 스타일링
+- 게임 승리 시 스타일링 <br/>
   ![image](https://github.com/user-attachments/assets/253e74f0-2f56-436b-af66-e0f1fa38e611)
 
-##### STEP8
+#### STEP8
 
 - 게임 종료 시 게임 오버 메시지 출력
 - 게임을 실행하는 함수 종료
@@ -129,3 +128,9 @@ export const checkWinner = (squares) => {
       return; // 함수 종료
     }
 ```
+
+#### STEP9
+
+- 게임 플레이어 집합
+- Squares의 상태 Board로 끌어올리기
+  - Squares의 상태를 Status와도 공유하기 위해 둘의 가장 가까운 부모인 Board로 끌어올림

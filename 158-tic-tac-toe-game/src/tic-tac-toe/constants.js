@@ -4,10 +4,14 @@ export const PLAYER = {
   TWO: '☕',
 };
 
-export const PLAYER_COUNT = Object.keys(PLAYER).length;
-
 // 스퀘어 집합 초기 상태 값
 export const INITIAL_SQUARES = Array(9).fill(null);
+
+// 게임 플레이어 집합
+export const PLAYER_LIST = Object.values(PLAYER);
+
+// 게임 플레이어의 수
+export const PLAYER_COUNT = Object.keys(PLAYER).length;
 
 // 승리자 색상
 export const WINNERS_COLOR = '#fff047';
