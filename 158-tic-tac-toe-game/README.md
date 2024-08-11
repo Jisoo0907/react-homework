@@ -135,15 +135,13 @@ export const checkWinner = (squares) => {
 - Squares의 상태 Board로 끌어올리기
   - Squares의 상태를 Status와도 공유하기 위해 둘의 가장 가까운 부모인 Board로 끌어올림
 
-#### STEP10
+#### STEP10 ~ 11
 
 - 게임 상태 메시지 표시
 - 승자가 누구인지 표시
 - 비겼을 경우 비겼음을 알려줌
 - Squares 컴포넌트 속성 타입 검사(w. 타입 모듈 분리) <br/>
   ![image](https://github.com/user-attachments/assets/402ea607-1b6d-49cf-b8c4-e9046e892189)
-
-#### STEP11
 
 - History 컴포넌트와 상태 공유를 위해 Board에서 Game으로 state 끌어올리기
 - 이쯤 되니까 상태를 끌어올지리 않고도 다른 컴포넌트들과 공유할 수 있으면 좋겠다는 생각이 들었다.
