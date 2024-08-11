@@ -149,7 +149,7 @@ export const checkWinner = (squares) => {
   ![image](https://github.com/user-attachments/assets/402ea607-1b6d-49cf-b8c4-e9046e892189)
 
 - History 컴포넌트와 상태 공유를 위해 Board에서 Game으로 state 끌어올리기
-- 이쯤 되니까 상태를 끌어올지리 않고도 다른 컴포넌트들과 공유할 수 있으면 좋겠다는 생각이 들었다.
+- 이쯤 되니까 상태를 끌어올리지 않고도 다른 컴포넌트들과 공유할 수 있으면 좋겠다는 생각이 들었다.
 
 #### STEP12
 
