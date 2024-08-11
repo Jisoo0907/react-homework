@@ -75,3 +75,45 @@ const handlePlay = (index) => {
 ##### STEP6
 
 - CSS 모듈을 활용한 스타일링
+
+##### STEP7
+
+- 게임 승리 조건 상수로 선언
+
+```
+const WINNER_CONDITIONS = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+];
+```
+
+- 게임 승리자가 있는 지 확인하는 함수 작성
+
+```
+export const checkWinner = (squares) => {
+  let winnerInfo = null;
+
+  for (const [x, y, z] of WINNER_CONDITIONS) {
+    const winner = squares[x];
+
+    if (winner && winner === squares[y] && winner === squares[z]) {
+      console.log('GAME OVER');
+      winnerInfo = {
+        winner,
+        condition: [x, y, z],
+      };
+      break;
+    }
+  }
+  return winnerInfo;
+};
+```
+
+- 게임 승리 시 스타일링
+  ![image](https://github.com/user-attachments/assets/253e74f0-2f56-436b-af66-e0f1fa38e611)
