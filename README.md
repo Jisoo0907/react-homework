@@ -13,3 +13,7 @@
 ## #120-컴포넌트 속성 검사 및 테스트
 
 [바로가기](/120-type-check/README.md)
+
+## #158-틱택토 게임 만들기
+
+[바로가기](/158-tic-tac-toe-game/README.md)

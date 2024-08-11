@@ -1,17 +1,13 @@
+import S from './Squares.module.css';
+import { PLAYER } from '@/tic-tac-toe/constants';
 import Square from '../Square/Square';
 
 function Squares() {
   return (
-    <div className="Squares">
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
+    <div className={S.component}>
+      <Square></Square>
+      <Square>{PLAYER.ONE}</Square>
+      <Square>{PLAYER.TWO}</Square>
     </div>
   );
 }

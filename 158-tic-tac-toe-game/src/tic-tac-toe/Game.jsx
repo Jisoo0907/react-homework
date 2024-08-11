@@ -1,3 +1,4 @@
+import './styles/main.css';
 import Board from './components/Board/Board';
 import History from './components/History/History';
 
