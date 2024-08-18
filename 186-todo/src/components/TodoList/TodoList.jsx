@@ -1,9 +1,9 @@
-import Doit from '../Todo/Todo';
+import Todo from '../Todo/Todo';
 
 function TodoList() {
   return (
     <ul>
-      <Doit />
+      <Todo />
     </ul>
   );
 }
