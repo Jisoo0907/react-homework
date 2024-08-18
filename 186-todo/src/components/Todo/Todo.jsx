@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Checkbox from '../Checkbox/Checkbox';
-import S from './Doit.module.css';
+import S from './Todo.module.css';
 import CheckboxArchived from '../CheckboxArchived/CheckboxArchived';
 
-function Doit() {
+function Todo() {
   const [isChecked, setIsChecked] = useState(false);
   const [isArchived, setIsArchived] = useState(true);
 
@@ -35,4 +35,4 @@ function Doit() {
     </li>
   );
 }
-export default Doit;
+export default Todo;
