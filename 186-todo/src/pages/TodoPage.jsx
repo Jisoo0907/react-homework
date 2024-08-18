@@ -10,7 +10,6 @@ function TodoPage() {
   };
   return (
     <div>
-      <Button />
       <TodoList />
       <ModalDialog />
     </div>

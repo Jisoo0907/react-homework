@@ -1,0 +1,19 @@
+.component {
+  width: 7.875rem;
+  padding: 1.12rem 1.25rem;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-size: 16px;
+}
+.buttonBlue {
+  background-color: #0760fb;
+}
+
+.buttonDodgerBlue {
+  background-color: #4b8dff;
+}
+
+.buttonSkyBlue {
+  background-color: #e2ebfa;
+}
