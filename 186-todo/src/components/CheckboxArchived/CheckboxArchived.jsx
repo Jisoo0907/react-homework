@@ -1,0 +1,28 @@
+import { bool, func } from 'prop-types';
+
+CheckboxArchived.propTypes = {
+  isArchived: bool,
+  onClick: func,
+};
+
+function CheckboxArchived({ isArchived, onClick }) {
+  return (
+    <svg
+      width="20"
+      height="20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+    >
+      <path
+        d="m18.088 4.41-2.499-2.5A.834.834 0 0 0 15 1.668H5a.833.833 0 0 0-.59.244L1.913 4.409a.833.833 0 0 0-.245.59v10.834c0 .92.747 1.667 1.666 1.667h13.334c.919 0 1.666-.747 1.666-1.667V5a.832.832 0 0 0-.245-.59ZM5.345 3.332h9.31l.833.833H4.511l.833-.833Zm-2.012 12.5v-10h13.334l.001 10H3.333Z"
+        fill={isArchived ? '#0760FB' : '#D9D9D9'}
+      />
+      <path
+        d="M12.5 10h-5V8.333H5.833v3.334h8.334V8.333H12.5V10ZM14.5 3h-9L4 4.5h12L14.5 3Z"
+        fill={isArchived ? '#0760FB' : '#D9D9D9'}
+      />
+    </svg>
+  );
+}
+export default CheckboxArchived;
