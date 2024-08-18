@@ -21,7 +21,9 @@ function Doit() {
         <h2>할 일</h2>
         <Checkbox isChecked={isChecked} onClick={handleCheckedClick} />
       </div>
-      <p>할 일 내용을 작성합니다.</p>
+      <label htmlFor="todo">
+        <input type="text" id="todo" placeholder="할 일 내용을 작성합니다." />
+      </label>
 
       <div className={S.archived}>
         <span>시간</span>
